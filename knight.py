@@ -6,8 +6,12 @@ def valid_begin(s):
 	return s[0] not in ['0', '1']
 
 
+def valid_digit(s):
+	return str.isdigit(s)
+
+
 def valid(s):
-	return valid_len(s) and valid_begin(s)
+	return valid_len(s) and valid_begin(s) and valid_digit(s)
 
 
 if __name__ == '__main__':
