@@ -66,13 +66,14 @@ def valid(s):
 if __name__ == '__main__':
 	# vars begin with t are valid string
 	t0 = '8349406'
-	t1 = ''
+	t1 = '7272949'
 	# vars begin with f are invalid string
 	f0 = '0618349'
 	f1 = '8349405'
-	# print valid(t0)
-	# print valid(f0)
-	# print valid(f1)
+	print valid(t0)
+	print valid(t1)
+	print valid(f0)
+	print valid(f1)
 
 	phone_nums = []
 	for x in xrange(1000000, 9999999):
