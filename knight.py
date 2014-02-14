@@ -1,3 +1,6 @@
+# All rights reserved.
+__author__ == 'Benqing.Shen'
+
 def valid_len(s):
 	return len(s) == 7
 
@@ -8,10 +11,6 @@ def valid_begin(s):
 
 def valid_digit(s):
 	return str.isdigit(s)
-
-
-def valid(s):
-	return valid_len(s) and valid_begin(s) and valid_digit(s)
 
 
 def knight_moves(x, y):
@@ -50,7 +49,12 @@ def valid_consecutive_num(s1, s2):
 
 
 def valide_trace(s):
-	pass
+	pairs = zip(s[:-1], s[1:])
+	tf = [valid_consecutive_num(pair[0], pair[1]) for pair in pairs]
+	return all(tf)
+
+def valid(s):
+	return valid_len(s) and valid_begin(s) and valid_digit(s) and valide_trace(s)
 
 
 if __name__ == '__main__':
