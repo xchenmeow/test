@@ -1,5 +1,5 @@
 # All rights reserved.
-__author__ == 'Benqing.Shen'
+# __author__ == 'Benqing.Shen'
 
 def valid_len(s):
 	return len(s) == 7
@@ -59,8 +59,10 @@ def valid(s):
 
 if __name__ == '__main__':
 	# vars begin with t are valid string
-	t0 = ''
+	t0 = '8349406'
 	t1 = ''
 	# vars begin with f are invalid string
-	f0 = ''
+	f0 = '0618349'
 	f1 = ''
+	print valid(t0)
+	print valid(f0)
