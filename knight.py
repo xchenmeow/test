@@ -41,7 +41,10 @@ def valid_knight_move(c1, c2):
 	x2, y2 = c2
 	dx = x2 - x1
 	dy = y2 - y1
-	return dx * dy == 2 or -2
+	# print type(dx)
+	# print type(dy)
+	print dx, dy
+	return ((dx * dy == 2) or (dx * dy == -2))
 
 
 def valid_consecutive_num(s1, s2):
@@ -63,6 +66,15 @@ if __name__ == '__main__':
 	t1 = ''
 	# vars begin with f are invalid string
 	f0 = '0618349'
-	f1 = ''
-	print valid(t0)
-	print valid(f0)
+	f1 = '8349405'
+	# print valid(t0)
+	# print valid(f0)
+	print valid(f1)
+
+	phone_nums = []
+	# for x in xrange(8349400, 8349409):
+		# print x
+		# if valid(str(x)):
+			# phone_nums.append(x)
+
+	# print len(phone_nums)
