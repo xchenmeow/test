@@ -17,14 +17,13 @@ if __name__ == '__main__':
 	for digits in xrange(2, 8):
 		for start in xrange(0, 10):
 			if start == 5:
-				valid_nums[digits][start] = 0
+				valid_nums[digits-1][start] = 0
 			elif start == 4 or start == 6:
-				valid_nums[digits][start] = valid_nums[digits - 1][move_map[start][0]] + valid_nums[digits - 1][move_map[start][1]] + valid_nums[digits - 1][move_map[start][2]]
+				valid_nums[digits-1][start] = valid_nums[digits - 2][move_map[start][0]] + valid_nums[digits - 2][move_map[start][1]] + valid_nums[digits - 2][move_map[start][2]]
 			else:
 				try:
-					valid_nums[digits][start] = valid_nums[digits - 1][move_map[start][0]] + valid_nums[digits - 1][move_map[start][1]]
+					valid_nums[digits-1][start] = valid_nums[digits - 2][move_map[start][0]] + valid_nums[digits - 2][move_map[start][1]]
 				except:
 					print digits, start
 
-
-	print valid_nums[1][0]
+	print sum([valid_nums[6][i] for i in range(2,10)]) 
