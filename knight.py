@@ -1,5 +1,6 @@
 # All rights reserved.
 # __author__ == 'Benqing.Shen'
+# python 2.7
 
 def valid_len(s):
 	return len(s) == 7
@@ -43,7 +44,7 @@ def valid_knight_move(c1, c2):
 	dy = y2 - y1
 	# print type(dx)
 	# print type(dy)
-	print dx, dy
+	# print dx, dy
 	return ((dx * dy == 2) or (dx * dy == -2))
 
 
@@ -54,9 +55,11 @@ def valid_consecutive_num(s1, s2):
 def valide_trace(s):
 	pairs = zip(s[:-1], s[1:])
 	tf = [valid_consecutive_num(pair[0], pair[1]) for pair in pairs]
+	# all operator in python is short-circuit
 	return all(tf)
 
 def valid(s):
+	# and operator in python is short-circuit
 	return valid_len(s) and valid_begin(s) and valid_digit(s) and valide_trace(s)
 
 
@@ -69,12 +72,15 @@ if __name__ == '__main__':
 	f1 = '8349405'
 	# print valid(t0)
 	# print valid(f0)
-	print valid(f1)
+	# print valid(f1)
 
 	phone_nums = []
-	# for x in xrange(8349400, 8349409):
+	for x in xrange(1000000, 9999999):
 		# print x
-		# if valid(str(x)):
-			# phone_nums.append(x)
+		if valid(str(x)):
+			phone_nums.append(x)
 
-	# print len(phone_nums)
+	print len(phone_nums)
+
+	with open('answer.txt', 'wb') as f:
+		[f.write(str(x) + ',\n') for x in phone_nums]
