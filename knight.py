@@ -82,5 +82,5 @@ if __name__ == '__main__':
 
 	print len(phone_nums)
 
-	with open('answer.txt', 'wb') as f:
-		[f.write(str(x) + ',\n') for x in phone_nums]
+	# with open('answer.txt', 'wb') as f:
+		# [f.write(str(x) + ',\n') for x in phone_nums]
